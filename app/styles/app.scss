@@ -1,18 +1,23 @@
 @import "ember-bootstrap/bootstrap";
 @import "./variables.scss";
+@import './animations.scss';
 
 .card {
   border-radius: 0;
+  position: relative;
 }
+
 .card-body {
   min-height: 15em;
 }
+
 .card-action.card-action--disable {
   pointer-events: none;
   opacity: 0.5;
   background: inherit;
   border: none;
 }
+
 .card-action svg {
   cursor: pointer;
   g {
@@ -32,6 +37,7 @@
 .app-header.app-header--color {
   background: $alpha;
 }
+
 .btn.btn-primary {
   background: $alpha;
   border: none;
@@ -40,6 +46,7 @@
 .progress__container {
   background: $delta;
 }
+
 .progress__container--gamma {
   background: $gamma;
 }

@@ -22,7 +22,7 @@ export default Controller.extend({
   prorgess: computed("model.id", function() {
     const id = this.get("model").id;
     const totalCount = this.get("model").totalCount;
-    return ((id / totalCount) *100).toFixed();
+    return `${((id / totalCount) *100).toFixed()}%`;
   }),
   saveAnswer() {
     const key = this.get("model").identifier;

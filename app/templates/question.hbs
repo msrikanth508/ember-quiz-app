@@ -1,47 +1,17 @@
-<div class="progress progress__container" style="height: 2px;">
-  <div class="progress-bar progress__container--gamma" role="progressbar" style="width: {{prorgess}}%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+<div class ="progress progress__container" style="height: 2px;">
+  <div class="progress-bar progress__container--gamma" role="progressbar" style="width: {{prorgess}}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
-<div class="card">
-    <div class="card-header">
-        <h5>{{model.id}}.{{' '}}{{model.headline}}</h5>
-    </div>
-    <div class="card-body">
-        {{#if (eq model.question_type "multiple-choice")}}
-            {{#each model.choices as | choice |}}
-                <div class="form-check">
-                    {{#if isMultiple }}
-                        <input class="form-check-input" type="checkbox" value= {{choice.value}} id= {{choice.value}} onchange= {{action "handleChange" value="target.value"}} checked={{choice.selected}} />
-                    {{else}}
-                        <input class="form-check-input" type="radio" name="radio" value= {{choice.value}} id= {{choice.value}} onchange= {{action "handleChange" value="target.value" }} checked={{choice.selected}} />
-                    {{/if}}
-                    <label class="form-check-label" name="radio" for= {{choice.value}}>
-                        {{choice.label}}
-                    </label>
-                </div>
-            {{/each}}
-        {{/if}}
-        {{#if (eq model.question_type "text")}}
-            <div class="form-group">
-                <label for="textarea">{{choice.label}}</label>
-                <textarea class="form-control" id="textarea" rows="3" autofocus="autofocus" value={{model.selectedValue}} onchange= {{action "handleChange" value="target.value"}}></textarea>
-            </div>
-        {{/if}}
-    </div>
-    <div class="card-footer">
-        <div class="d-flex justify-content-between align-items-center">
-            <div {{action "showPrevQuestion" }} title="Bisherige" class="card-action {{if isPrevDisabled 'card-action--disable' ''}}">
-                {{svg-jar "if_ArrowLeftCircle_1031539"}}
-            </div>
-            {{#if (not-eq isNextDisabled true)}}
-            <div {{action "showNextQuestion" }} title="Nächster" class="card-action {{if isNextDisabled 'card-action--disable' ''}}">
-                {{svg-jar "if_ArrowRightCircle_1031540"}}
-            </div>
-            {{/if}}
-            {{#if isNextDisabled}}
-                 {{#link-to 'score-card'  tagName="button" class="btn btn-primary" }}
-                Submit
-            {{/link-to}}
-            {{/if}}
-        </div>
-    </div>
+<div class="question-box">
+  {{question-box
+    id=model.id
+    headline=model.headline
+    choices=model.choices
+    questionType=model.question_type
+    selectedValue=model.selectedValue
+    onChange=(action "handleChange")
+    isPrevDisabled=isPrevDisabled
+    isNextDisabled=isNextDisabled
+    onShowPrevQuestion=(action "showPrevQuestion")
+    onShowNextQuestion=(action "showNextQuestion")
+  }}
 </div>

@@ -1,5 +1,10 @@
 import Component from '@ember/component';
 
 export default Component.extend({
-    classNames: ['card', 'score-card']
+    didInsertElement() {
+      this.$('.card').addClass('bounce');
+      this.$('.card').on('animationend', () => {
+        this.$('.card').removeClass('bounce');
+      });
+    },
 });
