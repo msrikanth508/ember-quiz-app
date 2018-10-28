@@ -3,15 +3,11 @@ import Component from '@ember/component';
 /**
  * 
  * NumberBoxComponent
- * @export
- * @class NumberBoxComponent
- * @extends {Component}
  */
 export default class NumberBoxComponent extends Component {
   /**
-   * 
-   * didInsertElement
-   * @memberof NumberBoxComponent
+   *
+   * Set animation after element attached to DOM
    */
   didInsertElement() {
     this.$('.card').addClass('bounce');

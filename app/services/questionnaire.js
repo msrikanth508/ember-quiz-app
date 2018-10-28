@@ -1,38 +1,54 @@
 import Service from '@ember/service';
-import data from './quizData';
+import QuizData from './quizData';
 import { inject } from '@ember/service';
 
-export default Service.extend({
-    storage: inject("storage"),
-    data: null,
-    answers: null,
-    totalCount: null,
-    init() {
-        this._super(...arguments);
-        const { questions } = data.questionnaire;
-        this.set("data", data.questionnaire);
-        this.set('totalCount', questions.length);
+/**
+ *
+ * QuestionnaireService
+ */
+export default class QuestionnaireService extends Service {
+    constructor() {
+        super(...arguments);
+        // Get storage service
+        this.storage = inject("storage");
+        const { questions } = QuizData.questionnaire;
+
+        this.data = null;
+        this.answers = null;
+        this.totalCount = null;
+        this.data = QuizData.questionnaire;
+        this.totalCount = questions.length;
+
         // populate answers from storage if any;
-        const answers = this.getAllAnswers();
-        this.set("answers", answers);
-    },
+        this.answers = this.getAllAnswers();
+    }
+    /**
+     * Save answer
+     * @param  {[type]} key  [description]
+     * @param  {[type]} data [description]
+     * @return {[type]}      [description]
+     */
     saveAnswer(key, data) {
-        const answers = this.get("answers");
-        answers[key] = data;
-        this.set("answers", answers);
+        this.answers[key] = data;
         this.get("storage").setItem(key, data);
-    },
+    }
+    /**
+     * Get answer
+     * @param  {[type]} key [description]
+     * @return {[type]}     [description]
+     */
     getAnswer(key) {
         const storage = this.get("storage");
         if(storage.has(key)) {
-            const answer = storage.getItem(key);
-            const answers = this.get("answers");
-            answers[key] = answer;
-            this.set("answers", answers);
-            return this.get("answers")[key];
+            this.answers[key] = storage.getItem(key);
+            return this.answers[key];
         }
         return null;
-    },
+    }
+    /**
+     * Get all answers
+     * @return {[type]} [description]
+     */
     getAllAnswers() {
         const storage = this.get("storage");
         const allItemKeys = storage.getAllItemKeys();
@@ -43,10 +59,14 @@ export default Service.extend({
             }, {});
         }
         return {};
-    },
+    }
+    /**
+     * Clear all answers
+     * @return {[type]} [description]
+     */
     clearAllAnswers() {
       const storage = this.get("storage");
       storage.clearAll();
       this.set('answers', {});
     }
-});
+}

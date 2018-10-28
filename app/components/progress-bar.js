@@ -1,26 +1,22 @@
 import Component from '@ember/component';
 
+
 /**
- * 
+ *
  * ProgressBarComponent
- * @export
- * @class ProgressBarComponent
- * @extends {Component}
  */
 export default class ProgressBarComponent extends Component {
   /**
-   * 
-   * didInsertElement
-   * @memberof ProgressBarComponent
+   *
+   * Set progress after element attached to DOM
    */
   didInsertElement() {
     this.element.querySelector('.progress').style.height = '2px';
     this.element.querySelector('.progress-bar').style.width = this.progress;
   }
   /**
-   * 
-   * didReceiveAttrs
-   * @memberof ProgressBarComponent
+   *
+   * Listen to attributes
    */
   didReceiveAttrs() {
     if(this.element) {

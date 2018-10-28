@@ -2,17 +2,32 @@ import Route from "@ember/routing/route";
 import { copy } from '@ember/object/internals';
 import { inject } from '@ember/service';
 
-export default Route.extend({
-  storage: inject("storage"),
-  questionnaire: inject("questionnaire"),
+/**
+ *
+ * QuestionRoute
+ */
+export default class QuestionRoute extends Route {
+  constructor() {
+    super(...arguments);
+    // Get questionnaire service
+    this.questionnaire = inject("questionnaire");
+    // Get storage service
+    this.storage = inject("storage");
+  }
+  /**
+   * Get model
+   * @param  {[type]} params [description]
+   * @return {[type]}        [description]
+   */
   model(params) {
     const id = Number(params.id);
     const questionnaire  = this.get('questionnaire').data;
     const totalCount = this.get('questionnaire').totalCount;
     const { questions } = questionnaire;
     const question = questions[id - 1];
+    // get question answer
     const answer = this.get("questionnaire").getAnswer(question.identifier);
-    const t = copy(question, true);
+    const ques = copy(question, true);
     let selectedValue = [];
 
     if(Array.isArray(answer)) {
@@ -22,7 +37,7 @@ export default Route.extend({
         return acc;
       }, {});
 
-      t.choices = t.choices.reduce((acc, choice) =>  {
+      ques.choices = ques.choices.reduce((acc, choice) =>  {
         if(mapping[choice.value]) {
           choice.selected = true;
           selectedValue.push(choice.value);
@@ -30,8 +45,8 @@ export default Route.extend({
         acc.push(choice);
         return acc;
       }, []);
-    } else if(t.choices) {
-      t.choices = t.choices.reduce((acc, choice) =>  {
+    } else if(ques.choices) {
+      ques.choices = ques.choices.reduce((acc, choice) =>  {
         if(choice.value === answer) {
           choice.selected = true;
           selectedValue = choice.value;
@@ -42,15 +57,29 @@ export default Route.extend({
     } else {
       selectedValue = answer || '';
     }
-    return Object.assign({}, t, {
+    return {
+      ...ques,
       id,
       totalCount,
       answer,
       selectedValue,
-    });
-  },
-  setupController: function(controller, model) {
+    }
+    // return Object.assign({}, ques, {
+    //   id,
+    //   question_type: ques.question_type,
+    //   totalCount,
+    //   answer,
+    //   selectedValue,
+    // });
+  }
+  /**
+   * [setupController description]
+   * @param  {[type]} controller [description]
+   * @param  {[type]} model      [description]
+   * @return {[type]}            [description]
+   */
+  setupController(controller, model) {
     controller.set("model", model);
     controller.set("selectedValue", model.selectedValue);
   }
-});
+}

@@ -8,6 +8,17 @@ module.exports = function(defaults) {
       'bootstrapVersion': 4,
       'importBootstrapFont': false,
       'importBootstrapCSS': false
+    },
+    babel: {
+      // enable "loose" mode
+      loose: true,
+      // don't transpile generator functions
+      exclude: [
+        'transform-regenerator',
+      ],
+      plugins: [
+        'transform-object-rest-spread'
+      ]
     }
   });
 
