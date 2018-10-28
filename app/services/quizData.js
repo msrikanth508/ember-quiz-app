@@ -10,7 +10,7 @@ export default {
           headline: "Wen möchtest Du versichern?",
           description: null,
           required: false,
-          multiple: "true",
+          multiple: "false",
           choices: [
             {
               label: "Meine Familie mit Kindern",

@@ -1,11 +1,18 @@
-import { module, test } from 'qunit';
-import { setupTest } from 'ember-qunit';
+import { test } from 'qunit';
+import { moduleFor } from 'ember-qunit';
 
-module('Unit | Route | question', function(hooks) {
-  setupTest(hooks);
+moduleFor('route:question', 'Unit | Route | question', {
+  needs:['service:questionnaire', 'service:storage']
+});
 
-  test('it exists', function(assert) {
-    let route = this.owner.lookup('route:question');
-    assert.ok(route);
+test('Test question router', function(assert) {
+  assert.expect(2);
+  
+  const route = this.subject();
+  const model = route.model({
+    id: 1
   });
+
+  assert.equal(model.totalCount, 18);
+  assert.equal(model.id, 1);
 });

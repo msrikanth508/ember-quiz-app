@@ -19,7 +19,7 @@ export default Controller.extend({
     const totalCount = this.get("model").totalCount;
     return id === totalCount;
   }),
-  prorgess: computed("model.id", function() {
+  progress: computed("model.id", function() {
     const id = this.get("model").id;
     const totalCount = this.get("model").totalCount;
     return `${((id / totalCount) *100).toFixed()}%`;
