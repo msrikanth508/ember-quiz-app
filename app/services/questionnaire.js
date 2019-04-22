@@ -12,7 +12,10 @@ export default class QuestionnaireService extends Service {
         // Get storage service
         this.storage = inject("storage");
         const { questions } = QuizData.questionnaire;
-
+        this.allAnswers = questions.reduce((acc, question) => {
+            acc[question.identifier] = question.answer;
+            return acc;
+        }, {});
         this.data = null;
         this.answers = null;
         this.totalCount = null;

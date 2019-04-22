@@ -18,7 +18,13 @@ export default class ScoreCardRoute extends Route {
   model() {
       const questionnaire = this.get("questionnaire");
       const { answers, totalCount } = questionnaire;
-      const correctAnswersCount = Object.keys(answers).length;
+      // all correct answers
+      const correctAnswersCount = Object.keys(answers).reduce((acc, key) => {
+          if(questionnaire.allAnswers[key] && questionnaire.allAnswers[key] === answers[key]) {
+            acc += 1;
+          }
+          return acc;
+      }, 0)
       const wrongAnswersCount = totalCount - correctAnswersCount;
 
       return {

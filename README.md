@@ -1,6 +1,6 @@
 # ember-quiz-app
 
-A simple quiz application built on ember framework. [Demo](https://agitated-hypatia-84d69d.netlify.com)
+A simple quiz application built on ember framework. [Demo](https://quizza.netlify.com/)
 
 ## Prerequisites
 
@@ -9,7 +9,6 @@ You will need the following things properly installed on your computer.
 * [Git](https://git-scm.com/)
 * [Node.js](https://nodejs.org/) (with npm)
 * [Ember CLI](https://ember-cli.com/)
-* [Google Chrome](https://google.com/chrome/)
 
 ## Installation
 

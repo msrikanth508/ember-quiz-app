@@ -59,6 +59,7 @@ export default class QuestionRoute extends Route {
     }
     return {
       ...ques,
+      originalAns: ques.answer,
       id,
       totalCount,
       answer,

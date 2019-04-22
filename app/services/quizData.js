@@ -2,501 +2,301 @@ export default {
     questionnaire: {
       id: 40,
       identifier: "ewBzTS",
-      name: "Privathaftpflichtversicherung",
+      name: "General Knowledge",
       questions: [
         {
           question_type: "multiple-choice",
           identifier: "list_12110962",
-          headline: "Wen möchtest Du versichern?",
+          headline: "The name of which spice comes from the French word for ‘nail’?",
           description: null,
           required: false,
           multiple: "false",
+          answer: "Clove",
           choices: [
             {
-              label: "Meine Familie mit Kindern",
-              value: "Meine Familie mit Kindern",
+              label: "Cinnamon",
+              value: "Cinnamon",
               selected: false
             },
             {
-              label: "Meine Familie ohne Kinder",
-              value: "Meine Familie ohne Kinder",
+              label: "Cardamom",
+              value: "Cardamom",
               selected: false
             },
             {
-              label: "Mich ohne Kind",
-              value: "Mich ohne Kind",
+              label: "Clove",
+              value: "Clove",
               selected: false
             },
-            {
-              label: "Mich mit Kind",
-              value: "Mich mit Kind",
-              selected: false
-            },
-            {
-              label: "Mich und meinen Lebenspartner",
-              value: "Mich und meinen Lebenspartner",
-              selected: false
-            }
           ],
-          jumps: []
-        },
-        {
-          question_type: "multiple-choice",
-          identifier: "list_12111610",
-          headline: "Bist Du Beamter oder im öffentlichen Dienst angestellt?",
-          description: null,
-          required: false,
-          multiple: "false",
-          choices: [
-            {
-              label: "Ja",
-              value: "Ja",
-              selected: false
-            },
-            {
-              label: "Nein",
-              value: "Nein",
-              selected: false
-            }
-          ],
-          jumps: []
-        },
-        {
-          question_type: "multiple-choice",
-          identifier: "list_12111777",
-          headline: "Möchtest Du eine Forderungsausfalldeckung absichern?",
-          description: null,
-          required: false,
-          multiple: "false",
-          choices: [
-            {
-              label: "Ja",
-              value: "Ja",
-              selected: false
-            },
-            {
-              label: "Nein",
-              value: "Nein",
-              selected: false
-            }
-          ],
-          jumps: []
         },
         {
           question_type: "multiple-choice",
           identifier: "list_12110966",
-          headline: "Wie wichtig ist Dir die Absicherung gegen Mietsachschäden?",
+          headline: "Name a country of South America, that is of the Westernmost part?",
           description: null,
           required: false,
           multiple: "false",
+          answer: "Peru",
           choices: [
             {
-              label: "Wichtig",
-              value: "Wichtig",
+              label: "Peru",
+              value: "Peru",
               selected: false
             },
             {
-              label: "Unwichtig",
-              value: "Unwichtig",
+              label: "Brazil",
+              value: "Brazil",
+              selected: false
+            },{
+              label: "Lima",
+              value: "Lima",
+              selected: false
+            },{
+              label: "Chile",
+              value: "Chile",
               selected: false
             }
           ],
-          jumps: []
         },
         {
           question_type: "multiple-choice",
-          identifier: "list_12110967",
-          headline: "Bist Du Eigentümer einer oder mehrerer Immobilien?",
+          identifier: "list_12110466",
+          headline: "Name the city in China that has the highest population?",
           description: null,
           required: false,
           multiple: "false",
+          answer: "Shanghai",
           choices: [
             {
-              label: "Ja",
-              value: "Ja",
+              label: "Nanjing",
+              value: "Nanjing",
               selected: false
             },
             {
-              label: "Nein",
-              value: "Nein",
+              label: "Beijing",
+              value: "Beijing",
+              selected: false
+            },{
+              label: "Shanghai",
+              value: "Shanghai",
+              selected: false
+            },{
+              label: "Shenzhen",
+              value: "Shenzhen",
               selected: false
             }
           ],
-          jumps: [
-            {
-              conditions: [
-                {
-                  field: "list_12110967",
-                  value: "Ja"
-                }
-              ],
-              destination: {
-                id: "list_12110968"
-              }
-            },
-            {
-              conditions: [
-                {
-                  field: "list_12110967",
-                  value: "Nein"
-                }
-              ],
-              destination: {
-                id: "list_12111854"
-              }
-            }
-          ]
-        },
-        {
+        }, {
           question_type: "multiple-choice",
-          identifier: "list_12110968",
-          headline: "Gehört Dir eine selbstbewohnte Immobilie?",
+          identifier: "list_11110966",
+          headline: "Name the Sri Lankan Mountain which is sacred to people of all faiths?",
           description: null,
           required: false,
           multiple: "false",
+          answer: "Adam’s Peak",
           choices: [
             {
-              label: "Ja, im Inland",
-              value: "Ja, im Inland",
+              label: "Kirigalpotta",
+              value: "Kirigalpotta",
               selected: false
             },
             {
-              label: "Ja, im Ausland",
-              value: "Ja, im Ausland",
+              label: "Mount Kailasj",
+              value: "Mount Kailasj",
               selected: false
-            },
-            {
-              label: "Ja, im Inland und Ausland",
-              value: "Ja, im Inland und Ausland",
+            },{
+              label: "Bible Rock",
+              value: "Bible Rock",
               selected: false
-            },
-            {
-              label: "Nein",
-              value: "Nein",
+            },{
+              label: "Adam’s Peak",
+              value: "Adam’s Peak",
               selected: false
             }
           ],
-          jumps: []
-        },
-        {
+        }, {
           question_type: "multiple-choice",
-          identifier: "list_13907264",
-          headline: "Hast Du eine oder mehrere vermietete Immobilien?",
+          identifier: "list_12410966",
+          headline: "Name the Greatest lake of America which is considered holly?",
           description: null,
           required: false,
           multiple: "false",
+          answer: "Lake Michigan",
           choices: [
             {
-              label: "Ja, im Inland",
-              value: "Ja, im Inland",
+              label: "Dal Lake",
+              value: "Dal Lake",
               selected: false
             },
             {
-              label: "Ja, im Ausland",
-              value: "Ja, im Ausland",
+              label: "Lake Superior",
+              value: "Lake Superior",
               selected: false
-            },
-            {
-              label: "Ja, im Inland und Ausland",
-              value: "Ja, im Inland und Ausland",
+            },{
+              label: "Chilika Lake",
+              value: "Chilika Lake",
               selected: false
-            },
-            {
-              label: "Nein",
-              value: "Nein",
+            },{
+              label: "Lake Michigan",
+              value: "Lake Michigan",
               selected: false
             }
           ],
-          jumps: []
-        },
-        {
+        }, {
           question_type: "multiple-choice",
-          identifier: "list_12111854",
-          headline: "Möchtest Du in nächster Zeit etwas bauen oder umbauen?",
+          identifier: "list_12150966",
+          headline: "The capital of Indonesia is located on an Island, name it",
           description: null,
           required: false,
           multiple: "false",
+          answer: "Java",
           choices: [
             {
-              label: "Ja",
-              value: "Ja",
+              label: "Bali",
+              value: "Bali",
               selected: false
             },
             {
-              label: "Nein",
-              value: "Nein",
+              label: "Jakarta",
+              value: "Jakarta",
               selected: false
-            }
+            },
+            {
+              label: "Aceh",
+              value: "Aceh",
+              selected: false
+            },
+            {
+              label: "Java",
+              value: "Java",
+              selected: false
+            },
           ],
-          jumps: []
-        },
-        {
+        }, {
           question_type: "multiple-choice",
-          identifier: "list_12110972",
-          headline:
-            "Wie wichtig ist Dir die Absicherung gegen beruflichen Schlüsselverlust?",
+          identifier: "list_12110960",
+          headline: "The Everglades in the USA is located in which place?",
           description: null,
           required: false,
           multiple: "false",
+          answer: "Florida",
           choices: [
             {
-              label: "Wichtig",
-              value: "Wichtig",
+              label: "Florida",
+              value: "Florida",
               selected: false
             },
             {
-              label: "Unwichtig",
-              value: "Unwichtig",
+              label: "Miami",
+              value: "Miami",
               selected: false
-            }
+            },
+            {
+              label: "Orlando",
+              value: "Orlando",
+              selected: false
+            },
+            {
+              label: "Tampa",
+              value: "Tampa",
+              selected: false
+            },
           ],
-          jumps: []
-        },
-        {
+        }, {
           question_type: "multiple-choice",
-          identifier: "list_13913438",
-          headline: "Möchtest Du den Verlust privater Schlüssel absichern?",
+          identifier: "list_12110986",
+          headline: "When a high area of land drops steeply, especially into the sea, what is the land formation called?",
           description: null,
           required: false,
           multiple: "false",
+          answer: "Cliff",
           choices: [
             {
-              label: "Ja",
-              value: "Ja",
+              label: "Valley",
+              value: "Valley",
               selected: false
             },
             {
-              label: "Nein",
-              value: "Nein",
+              label: "Cliff",
+              value: "Cliff",
               selected: false
-            }
+            },
+            {
+              label: "Basins",
+              value: "Basins",
+              selected: false
+            },
+            {
+              label: "Buttes",
+              value: "Buttes",
+              selected: false
+            },
           ],
-          jumps: []
-        },
-        {
+        }, {
           question_type: "multiple-choice",
-          identifier: "list_12110969",
-          headline: "Möchtest Du im Ausland abgesichert sein?",
+          identifier: "list_12110944",
+          headline: "The island where Male’s airport is located is?",
           description: null,
           required: false,
           multiple: "false",
+          answer: "Hulule",
           choices: [
             {
-              label: "Ja, bis zu einem Monat",
-              value: "Ja, bis zu einem Monat",
+              label: "Hulule",
+              value: "Hulule",
               selected: false
             },
             {
-              label: "Ja, mehrere Monate",
-              value: "Ja, mehrere Monate",
+              label: "Mauritius",
+              value: "Mauritius",
               selected: false
             },
             {
-              label: "Nein",
-              value: "Nein",
+              label: "Bali",
+              value: "Bali",
               selected: false
-            }
+            },
+            {
+              label: "Bahamas",
+              value: "Bahamas",
+              selected: false
+            },
           ],
-          jumps: []
-        },
-        {
+        }, {
           question_type: "multiple-choice",
-          identifier: "list_12110970",
-          headline: "Hast Du ein Segelboot?",
+          identifier: "list_12220966",
+          headline: "The country which was earlier called as Siam?",
           description: null,
           required: false,
           multiple: "false",
+          answer: "Thailand",
           choices: [
             {
-              label: "Bis 4 m²",
-              value: "Bis 4 m²",
+              label: "Vietnam",
+              value: "Vietnam",
               selected: false
             },
             {
-              label: "Bis 10 m²",
-              value: "Bis 10 m²",
+              label: "Thailand",
+              value: "Thailand",
               selected: false
             },
             {
-              label: "Bis 15 m²",
-              value: "Bis 15 m²",
+              label: "Cambodia",
+              value: "Cambodia",
               selected: false
             },
             {
-              label: "Bis 25 m²",
-              value: "Bis 25 m²",
+              label: "Laos",
+              value: "Laos",
               selected: false
             },
-            {
-              label: "Nein",
-              value: "Nein",
-              selected: false
-            }
           ],
-          jumps: []
-        },
-        {
-          question_type: "multiple-choice",
-          identifier: "list_12110971",
-          headline: "Hast Du ein Motorboot?",
-          description: null,
-          required: false,
-          multiple: "false",
-          choices: [
-            {
-              label: "Bis 5 PS",
-              value: "Bis 5 PS",
-              selected: false
-            },
-            {
-              label: "Bis 10 PS",
-              value: "Bis 10 PS",
-              selected: false
-            },
-            {
-              label: "Bis 15 PS",
-              value: "Bis 15 PS",
-              selected: false
-            },
-            {
-              label: "Unbegrenzte PS",
-              value: "Unbegrenzte PS",
-              selected: false
-            },
-            {
-              label: "Nein",
-              value: "Nein",
-              selected: false
-            }
-          ],
-          jumps: []
-        },
-        {
-          question_type: "multiple-choice",
-          identifier: "list_12110965",
-          headline:
-            "Möchtest Du bei einem Schadensfall einen Teil selbst bezahlen?",
-          description: null,
-          required: false,
-          multiple: "false",
-          choices: [
-            {
-              label: "Nein",
-              value: "Nein",
-              selected: false
-            },
-            {
-              label: "Ja, bis 150 Euro",
-              value: "Ja, bis 150 Euro",
-              selected: false
-            }
-          ],
-          jumps: []
-        },
-        {
-          question_type: "multiple-choice",
-          identifier: "list_12111717",
-          headline: "Hast Du aktuell schon eine Privathaftpflichtversicherung?",
-          description: null,
-          required: false,
-          multiple: "false",
-          choices: [
-            {
-              label: "Ja",
-              value: "Ja",
-              selected: false
-            },
-            {
-              label: "Nein",
-              value: "Nein",
-              selected: false
-            }
-          ],
-          jumps: [
-            {
-              conditions: [
-                {
-                  field: "list_12111717",
-                  value: "Ja"
-                }
-              ],
-              destination: {
-                id: "list_12111755"
-              }
-            },
-            {
-              conditions: [
-                {
-                  field: "list_12111717",
-                  value: "Nein"
-                }
-              ],
-              destination: {
-                id: "date_22039590"
-              }
-            }
-          ]
-        },
-        {
-          question_type: "multiple-choice",
-          identifier: "list_12111755",
-          headline:
-            "Wie viele Haftpflichtschäden hattest Du in den letzten 5 Jahren?",
-          description: null,
-          required: false,
-          multiple: "false",
-          choices: [
-            {
-              label: "Keine",
-              value: "Keine",
-              selected: false
-            },
-            {
-              label: "1",
-              value: "1",
-              selected: false
-            },
-            {
-              label: "2",
-              value: "2",
-              selected: false
-            },
-            {
-              label: "3",
-              value: "3",
-              selected: false
-            },
-            {
-              label: "Mehr als 3",
-              value: "Mehr als 3",
-              selected: false
-            }
-          ],
-          jumps: []
-        },
-        {
-          question_type: "text",
-          identifier: "date_22039590",
-          headline:
-            "Was wäre Dein Wunschtermin für den Beginn der Privathaftpflichtversicherung?",
-          description: null,
-          required: false,
-          multiline: "false",
-          jumps: []
-        },
-        {
-          question_type: "text",
-          identifier: "textarea_12110979",
-          headline:
-            "Hast Du noch weitere Informationen oder Anmerkungen für uns?",
-          description: null,
-          required: false,
-          multiline: "true",
-          jumps: []
         }
       ],
       description:
-        "Um Dein persönliches Privathaftpflichtversicherungs-Angebot zu erstellen, benötigen wir noch ein paar Informationen von Dir.",
+        "General Knowledge MCQ – GK Multiple Choice",
       category_name_hyphenated: "Pri\u0026shy;vat\u0026shy;haft\u0026shy;pflicht"
     }
   };
